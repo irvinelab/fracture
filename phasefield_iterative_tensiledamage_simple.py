@@ -1,20 +1,17 @@
 from dolfin import *
 import numpy as np
 
-'''Evolve KKL phasefield equations with damage (d phi/dt <0 locally) in a scatter setup:
+'''
+Example of evolving KKL phasefield equations with damage (d phi/dt <0 locally) in a scatter setup:
 A thin, flat sheet is conformed to a substrate in the shape of a of a single bump, with a crack at the edge of a
 circular (disk-shaped) sample.
 To use this example, first make a mesh file that can be loaded, or else set args.shape == 'UnitSquare' (which is a
-built-in mesh in FEniCS). Save your mesh as:
-'../meshes/'+shape+'Mesh_'+meshtype+add_exten+'_eta'+etastr+'_R'+Rstr+'_N'+str(int(N))+'.xml'
-where shape is 'square' or 'circle', meshtype is typically 'Triangular',
-add_exten is '_theta'+ '{0:.3f}'.format(theta/np.pi).replace('.','p')+'pi' where theta is the angle in radians that the
-created mesh has been rotated, Rstr is '{0:.3f}'.format(R).replace('.','p'), where R is the radius or half-width of the
-mesh in coordinate space, and N is the number of vertices in the mesh (which can be specified via args.Npts using the
-argparser.
-You can create such a mesh using mesh_generateion_xml_fenics.py.
+built-in mesh in FEniCS). You can create such a mesh using mesh_generation_xml_fenics.py.
 
-If you intend to use pieces of this code for research or other purposes, please email me at noah.prentice.mitchell@gmail.com.
+This code uses the dolfin wrapper of the FEniCS package, available for free at 
+https://fenicsproject.org/
+
+c. Noah P Mitchell, noah.prentice.mitchell@gmail.com.
 '''
 
 ##############################
